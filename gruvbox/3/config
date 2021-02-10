@@ -1,0 +1,110 @@
+#
+#   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+#   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+#   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+#   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+#   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+#   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+#
+# [section/base]
+include-file = ~/.config/polybar/modules.config
+
+######################## 
+### GENERAL SETTINGS ### 
+########################
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[colors]
+foreground  = #bebebe
+foreground-alt = ${xrdb:Polybar.foreground-alt}
+background  = ${xrdb:Polybar.background}
+black       = ${xrdb:Polybar.color0}
+red         = ${xrdb:Polybar.color1}
+green       = ${xrdb:Polybar.color2}
+yellow      = ${xrdb:Polybar.color3}
+blue        = ${xrdb:Polybar.color4}
+magenta     = ${xrdb:Polybar.color5}
+cyan        = ${xrdb:Polybar.color6}
+white       = #bebebe
+
+# [settings]
+# throttle-output     = 5
+# throttle-output-for = 10
+# throttle-input-for  = 30
+# screenchange-reload = true
+
+#compositing-background = xor
+#compositing-background = screen
+#compositing-foreground = source
+#compositing-border     = over
+# pseudo-transparency     = true
+
+# Fallback values for all formats
+format-background = #282828
+format-foreground = #282828
+format-underline  =
+format-overline   =
+format-spacing    =
+format-padding    =
+format-margin     = 
+format-offset     =
+
+
+####################
+### BAR SETTINGS ### 
+####################
+
+[bar/top-desktop]
+#monitor     = ${env:MONITOR}
+
+background  = ${colors.background}
+foreground  = ${colors.foreground}
+
+### Fonts ###
+# For normal text
+font-0  = "Terminus:size=10;2"
+# For icons
+font-1  = "NotoSans Nerd Font:size=11;2" 
+# For powerline symbols
+font-2  = "NotoSans Nerd Font:size=12;3" 
+#font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
+#font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
+#font-5 = "Font Awesome 5 Brands:pixelsize=8;1"
+font-3  = "DejaVuSansMono Nerd Font:size=11"
+
+cursor-click = pointer
+
+height = 20
+width  = 100%
+bottom = false
+
+# For a floating polybar
+# override-redirect = true
+wm-restack          = i3
+
+radius          = 0.0
+#line-size      = 2
+#line-color     = #000000
+padding-right   = 0
+padding-left    = 0
+module-margin   = 0
+
+# Invisible top border (for a floating bar)
+border-color       = #00000000
+border-left-size   = 0
+border-right-size  = 0
+border-top-size    = 0
+border-bottom-size = 0
+
+### Modules ###
+fixed-center   = true 
+# modules-left   = i3 arrow2 cmus spotify
+
+modules-left   = i3
+modules-center = 
+modules-right  = arrow-end arrow-cyan updates-arch-aur arrow-magenta nvidia arrow-red pulseaudio arrow-green temperature arrow-yellow cpu arrow-blue memory arrow-cyan eth arrow-magenta date arrow-red time 
+
+
