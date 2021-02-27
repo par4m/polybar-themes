@@ -54,8 +54,11 @@ volume-med = #ebcb8b
 volume-max = #bf616a
 bg1 = #3C3836
 bg2 = #1d2021
+; fgg1 = #ebdbb2
+; fgg2 = #d4be98
 fgg1 = #ebdbb2
-fgg2 = #ebdbb2
+fgg2 = #d4be98
+
 ; =======================
 
 ; Gotham theme ==========
@@ -136,7 +139,7 @@ font-3 = wuncon siji:pixelsize=10;2
 
 modules-left = i3 xwindow
 modules-center = 
-modules-right = arrow1 networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu2 arrow2 pulseaudio arrow3 arch-aur-updates arrow2 date arrow3
+modules-right = arrow1 music networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu2 arrow2 pulseaudio arrow3 arch-aur-updates arrow2 date arrow3
 
 separator = 
 
@@ -154,7 +157,6 @@ tray-scale = 1.0
 #i3: Make the bar appear below windows
 ;wm-restack = i3
 ;override-redirect = true
-
 ; Enable support for inter-process messaging
 ; See the Messaging wiki page for more details.
 enable-ipc = true
@@ -649,7 +651,7 @@ label-focused = %icon% %name%
 label-focused-background = ${colors.background}
 ; label-focused-foreground =  #e1acff
 
-label-focused-foreground =  ${colors.fgg1}
+label-focused-foreground =  ${colors.fgg2}
 ; label-focused-underline = #AD69AF
 label-focused-padding = 1
 
@@ -662,7 +664,7 @@ label-focused-padding = 1
 label-unfocused = %icon% %name%
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.background}
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-foreground = #908576
 ; label-unfocused-underline =
 
 ; visible = Active workspace on unfocused monitor
@@ -1695,6 +1697,16 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 ################################################################################
 
+
+[module/music]
+type = custom/script
+icon = 契
+exec = ~/.config/polybar/scripts/mpris_tail.py -f '  {:artist:t10:{artist}:}{:artist: -  :}{:t10:{title}:}  %{A1:~/.config/polybar/scripts/mpris_tail.py previous -b vlc -b plasma-browser-integration:}%{A}%{A1:~/.config/polybar/scripts/mpris_tail.py play-pause -b vlc -b plasma-browser-integration:}{icon-reversed}%{A}%{A1:~/.config/polybar/scripts/mpris_tail.py next -b vlc -b plasma-browser-integration:}%{A}' -b vlc -b plasma-browser-integration --icon-stopped ' | No Player Found'
+tail = true
+format-background = ${colors.bg2}
+format-foreground = ${colors.fgg2}
+format-padding = 1
+
 [module/xwindow]
 ;https://github.com/jaagr/polybar/wiki/Module:-xwindow
 type = internal/xwindow
@@ -1705,10 +1717,10 @@ type = internal/xwindow
 label = %title%
 label-maxlen = 50
 
-format-prefix = "  "
+format-prefix ="   "
 format-prefix-underline = #292d3e
 format-underline = #e1acff
-format-foreground = ${colors.fgg1}
+format-foreground = ${colors.fgg2}
 format-background = ${colors.background}
 
 ###############################################################################
