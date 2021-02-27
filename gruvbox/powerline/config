@@ -46,12 +46,16 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #282c34
+background = #282828
 foreground = #abb2bf
 alert = #bd2c40
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
+bg1 = #3C3836
+bg2 = #1d2021
+fgg1 = #ebdbb2
+fgg2 = #ebdbb2
 ; =======================
 
 ; Gotham theme ==========
@@ -141,7 +145,7 @@ separator =
 tray-position = right
 tray-detached = false
 tray-maxsize = 20
-tray-background = #8d62a9
+tray-background = ${colors.bg2}
 tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 4
@@ -643,7 +647,9 @@ label-mode-background = #FFBB00
 ; focused = Active workspace on focused monitor
 label-focused = %icon% %name%
 label-focused-background = ${colors.background}
-label-focused-foreground =  #e1acff
+; label-focused-foreground =  #e1acff
+
+label-focused-foreground =  ${colors.fgg1}
 ; label-focused-underline = #AD69AF
 label-focused-padding = 1
 
@@ -765,24 +771,24 @@ format-background = ${colors.background}
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #8d62a9
-content-background = #292d3e
+content-foreground = ${colors.bg2}
+content-background = ${colors.background}
 
 [module/arrow2]
 ; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #668bd7
-content-background = #8d62a9
+content-foreground = ${colors.bg1}
+content-background = ${colors.bg2}
 
 [module/arrow3]
 ; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #8b62a9
-content-background = #668bd7
+content-foreground = ${colors.bg2}
+content-background = ${colors.bg1}
 
 ################################################################################
 ###############################################################################
@@ -796,10 +802,10 @@ exec = ~/.config/polybar/scripts/updates.sh
 tail = true
 interval = 5
 label = %output%
-format-foreground = #fefefe
-format-background = #8d62ad
+format-foreground = ${colors.fgg2}
+format-background = ${colors.bg2}
 format-prefix = "  "
-format-prefix-foreground = #fefefe
+format-prefix-foreground = ${colors.fgg2}
 
 
 [module/aur-updates]
@@ -977,10 +983,10 @@ type = internal/cpu
 ; Seconds to sleep between updates
 ; Default: 1
 interval = 1
-format-foreground = #fefefe
-format-background = #8d62ad
+format-foreground = ${colors.fgg2}
+format-background = ${colors.bg2}
 format-prefix = ""
-format-prefix-foreground = #fefefe
+format-prefix-foreground = ${colors.fgg2}
 
 label-font = 1
 
@@ -1026,9 +1032,9 @@ interval = 5
 
 time = %I:%M %p
 time-alt = %A, %d %b %g
-label-foreground = #FFFFFF
+label-foreground = ${colors.fgg1}
 
-label-background = #668bd7
+label-background = ${colors.bg1}
 label-padding = 1
 label = %time%
 
@@ -1228,9 +1234,9 @@ label = %percentage_used%%
 
 format =<label>
 format-prefix = " "
-format-prefix-foreground = #fefefe
-format-foreground = #fefefe
-format-background = #668bd7
+format-prefix-foreground = ${colors.fgg1}
+format-foreground = ${colors.fgg1}
+format-background = ${colors.bg1}
 format-padding = 1
 
 ################################################################################
@@ -1657,8 +1663,8 @@ use-ui-max = false
 interval = 5
 
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = #668bd7
-format-volume-foreground = #FFFFFF
+format-volume-background = ${colors.bg1}
+format-volume-foreground = ${colors.fgg1}
 
 format-volume-padding = 1
 ; format-volume-prefix = "   "
@@ -1702,7 +1708,7 @@ label-maxlen = 50
 format-prefix = "  "
 format-prefix-underline = #292d3e
 format-underline = #e1acff
-format-foreground = #e1acff
+format-foreground = ${colors.fgg1}
 format-background = ${colors.background}
 
 ###############################################################################
