@@ -58,7 +58,7 @@ bg1 = #3C3836
 ; fgg2 = #d4be98
 fgg = #b3aaa5
 fgg2 = #bebebe
-fgg1 = #b3aaa5
+fgg1 = #bebebe
 
 ; =======================
 
@@ -131,7 +131,7 @@ module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = Terminus:fontformat=truetype:size=11:antialias=true;2
-font-1 = Terminus:fontformat=truetype:size=24:antialias=true;3
+font-1 = JetBrains Mono Medium:fontformat=truetype:size=11:antialias=true;3
 font-2 = unifont:fontformat=truetype:size=8:antialias=true;1
 font-3 = wuncon siji:pixelsize=10;2
 ; font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;2"
@@ -140,7 +140,7 @@ font-3 = wuncon siji:pixelsize=10;2
 
 modules-left = i3 xwindow
 modules-center = 
-modules-right = arrow1 music networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu2 arrow2 pulseaudio arrow3 arch-aur-updates arrow2 date arrow3
+modules-right = arrow1 music networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu2 arrow2 pulseaudio arrow3 arch-aur-updates arrow2 date arrow3 wlan arrow2
 
 separator = 
 
@@ -149,7 +149,7 @@ separator =
 tray-position = right
 tray-detached = false
 tray-maxsize = 20
-tray-background = ${colors.bg2}
+tray-background = ${colors.bg1}
 tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 4
@@ -1040,6 +1040,35 @@ label-foreground = ${colors.fgg1}
 label-background = ${colors.bg1}
 label-padding = 1
 label = %time%
+
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+
+interval = 3.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = "  <ramp-signal> NSA"
+format-connected-background = ${colors.bg2}
+format-connected-foreground = ${colors.fgg2}
+
+format-connected-padding = 0
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${colors.dark2}
+format-disconnected-foreground = ${colors.foreground}
+format-disconnected-padding = 1
+
+label-connected = "%{A1:cmst -d&:} %essid%%{A}"
+label-disconnected = "%{A1:cmst -d&:}x%{A}"
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 
 #################################################################
 
