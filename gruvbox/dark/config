@@ -52,13 +52,13 @@ alert = #bd2c40
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
-bg2 = #504945
-bg1 = #3C3836
+bg2 = #3C3835
+bg1 = #282828
 ; fgg1 = #ebdbb2
 ; fgg2 = #d4be98
-fgg = #AFAAAA
-fgg2 = #bebebe
-fgg1 = #bebebe
+fgg = #A89984
+fgg2 = #A89984
+fgg1 = #A89984
 
 ; =======================
 
@@ -98,7 +98,7 @@ override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
-height = 18
+height = 20
 ;offset-x = 1%
 ;offset-y = 1%
 
@@ -130,8 +130,8 @@ module-margin-left = 0
 module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = Terminus:fontformat=truetype:size=11:antialias=true;2
-font-1 = JetBrains Mono Medium:fontformat=truetype:size=11:antialias=true;3
+font-0 = Terminus:fontformat=rruetype:size=11:antialias=true;2
+font-1 = Terminus:size=20:antialias=true;3
 font-2 = unifont:fontformat=truetype:size=8:antialias=true;1
 font-3 = wuncon siji:pixelsize=10;2
 ; font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;2"

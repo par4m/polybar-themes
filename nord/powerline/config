@@ -46,19 +46,19 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #282828
+background = #2A313E
 foreground = #abb2bf
 alert = #bd2c40
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
-bg2 = #504945
-bg1 = #3C3836
+bg2 = #57636B
+bg1 = #495A64
 ; fgg1 = #ebdbb2
 ; fgg2 = #d4be98
-fgg = #AFAAAA
-fgg2 = #bebebe
-fgg1 = #bebebe
+fgg = #bebebe
+fgg2 = #D8D7D5
+fgg1 = #D8D7D5
 
 ; =======================
 
@@ -1731,7 +1731,7 @@ format-background = ${colors.background}
 [module/music]
 type = custom/script
 icon = 契
-exec = ~/.config/polybar/scripts/mpris_tail.py -f '  {:artist:t10:{artist}:}{:artist: -  :}{:t10:{title}:}  %{A1:~/.config/polybar/scripts/mpris_tail.py previous -b vlc -b plasma-browser-integration:}%{A}%{A1:~/.config/polybar/scripts/mpris_tail.py play-pause -b vlc -b plasma-browser-integration:}{icon-reversed}%{A}%{A1:~/.config/polybar/scripts/mpris_tail.py next -b vlc -b plasma-browser-integration:}%{A}' -b vlc -b plasma-browser-integration --icon-stopped ' No Player Found'
+exec = ~/.config/polybar/scripts/mpris_tail.py -f '  {:artist:t10:{artist}:}{:artist: -  :}{:t10:{title}:}  %{A1:~/.config/polybar/scripts/mpris_tail.py previous -b vlc -b plasma-browser-integration:}%{A}%{A1:~/.config/polybar/scripts/mpris_tail.py play-pause -b vlc -b plasma-browser-integration:}{icon-reversed}%{A}%{A1:~/.config/polybar/scripts/mpris_tail.py next -b vlc -b plasma-browser-integration:}%{A}' -b vlc -b plasma-browser-integration --icon-stopped ' | No Player Found'
 tail = true
 format-background = ${colors.bg2}
 format-foreground = ${colors.fgg2}
@@ -1745,7 +1745,7 @@ type = internal/xwindow
 ;   %title%
 ; Default: %title%
 label =   %title%
-label-maxlen = 15
+label-maxlen = 50
 
 format-prefix ="  "
 format-prefix-underline = #292d3e
